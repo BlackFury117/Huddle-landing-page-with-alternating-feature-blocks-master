@@ -1,7 +1,6 @@
 @use 'globals/reset';
 @use 'globals/typography';
 @use 'globals/variables';
-@use 'globals/mixins.scss';
 
 @mixin btn-started{
     cursor: pointer;
@@ -102,7 +101,6 @@
 
         .mockups{
             width: 100%;
-            // margin-bottom: 3rem;
         }
     }
 }
