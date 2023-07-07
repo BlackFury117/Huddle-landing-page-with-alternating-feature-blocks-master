@@ -1,5 +1,109 @@
 @use 'globals/reset';
 @use 'globals/typography';
 @use 'globals/variables';
-@use 'globals/mixins.scss' as *;
+@use 'globals/mixins.scss';
+
+@mixin btn-started{
+    cursor: pointer;
+    font-size: .900rem;
+    color: white;
+    background-color: variables.$btn-bg-color;
+    padding: 0.800rem 3rem;
+    border: none;
+    border-radius: 60px;
+    box-shadow: 0px 0px 25px -10px rgba(15, 14, 14, 0.75);
+
+    &:hover{
+        background-color: #fe86d2;
+    }
+}
+
+/// FIRST SECTION ///
+
+.bg-container{
+    background-image: url(/images/bg-hero-desktop.svg);
+    background-color: #edfbfe;
+    background-repeat: no-repeat;
+    background-size: contain;
+    min-height: 90vh;
+    padding: 0 4rem;
+
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.6rem 0 1.6rem 0;
+      
+        .logo{
+          flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          width: 150px;
+        }
+      
+        .button{
+          flex: 0;
+          display: flex;
+          align-items: center;
+      
+          .btn{
+            background-color: white;
+            padding: .500rem 2.5rem;
+            border-radius: 50px;
+            font-size: .820rem;
+            font-weight: 600;
+            color: variables.$heading-color;
+            box-shadow: 0px 0px 25px -10px rgba(15, 14, 14, 0.65);
+            white-space: nowrap;
+          }
+
+          .btn:hover{
+            color: variables.$text-color;
+          }
+        }
+    }
+
+    .container{  
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+          "text image";
+        margin: 2rem 0 0 0;
+
+        .text {
+        justify-self: start;
+        align-self: center;
+        grid-area: text;
+        }
+
+        h1{
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .first-text{
+            font-family: variables.$font-text;
+            color: variables.$heading-color;
+            margin-bottom: 2rem;
+        }
+
+        .btn-started{
+            @include btn-started;
+        }
+        
+        .image {
+        align-self: center;
+        grid-area: image;
+        }
+
+        .mockups{
+            width: 100%;
+            // margin-bottom: 3rem;
+        }
+    }
+}
 
