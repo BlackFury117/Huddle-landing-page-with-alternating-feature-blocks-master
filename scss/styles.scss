@@ -26,6 +26,7 @@
     background-size: contain;
     min-height: 90vh;
     padding: 0 4rem;
+    margin-bottom: 5rem;
 
     .navbar{
         display: flex;
@@ -104,4 +105,38 @@
         }
     }
 }
+
+/// SECOND SECTION ///
+
+.second-container{ 
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "text-zone-1 image-1";
+  margin: 0 4rem;
+  background-color: white;
+
+  .text-zone-1{
+    align-self: center;
+    grid-area: text-zone-1;
+  }
+
+  h2, h3, h4, h5{
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .image-1{
+    align-self: center;
+    grid-area: image-1;
+  }
+
+  .grow-img{
+    width: 100%;
+  }
+}
+
 
