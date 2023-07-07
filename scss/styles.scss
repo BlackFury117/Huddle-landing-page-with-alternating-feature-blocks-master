@@ -3,107 +3,125 @@
 @use 'globals/variables';
 
 @mixin btn-started{
-    cursor: pointer;
-    font-size: .900rem;
-    color: white;
-    background-color: variables.$btn-bg-color;
-    padding: 0.800rem 3rem;
-    border: none;
-    border-radius: 60px;
-    box-shadow: 0px 0px 25px -10px rgba(15, 14, 14, 0.75);
+  cursor: pointer;
+  font-size: .900rem;
+  color: white;
+  background-color: variables.$btn-bg-color;
+  padding: 0.800rem 3rem;
+  border: none;
+  border-radius: 60px;
+  box-shadow: 0px 0px 25px -10px rgba(15, 14, 14, 0.75);
 
-    &:hover{
-        background-color: #fe86d2;
-    }
+  &:hover{
+    background-color: #fe86d2;
+  }
+}
+
+@mixin heading{
+  font-size: 1.7rem;
+  margin-bottom: 1.2rem;
+}
+
+@mixin text-setup{
+  font-family: variables.$font-text;
+  color: variables.$text-color;
+}
+
+@mixin card{
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0px 0px 25px -10px rgba(15, 14, 14, 0.25);
+  margin: 0 4rem 2rem 4rem;
+  padding: 3rem 1rem 3rem 7rem;
 }
 
 /// FIRST SECTION ///
 
 .bg-container{
-    background-image: url(/images/bg-hero-desktop.svg);
-    background-color: #edfbfe;
-    background-repeat: no-repeat;
-    background-size: contain;
-    min-height: 90vh;
-    padding: 0 4rem;
-    margin-bottom: 5rem;
+  background-image: url(/images/bg-hero-desktop.svg);
+  background-color: #edfbfe;
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-height: 90vh;
+  padding: 0 4rem;
+  margin-bottom: 5rem;
 
-    .navbar{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1.6rem 0 1.6rem 0;
-      
-        .logo{
-          flex: 1;
-          display: flex;
-          align-items: center;
-          justify-content: flex-start;
-          width: 150px;
-        }
-      
-        .button{
-          flex: 0;
-          display: flex;
-          align-items: center;
-      
-          .btn{
-            background-color: white;
-            padding: .500rem 2.5rem;
-            border-radius: 50px;
-            font-size: .820rem;
-            font-weight: 600;
-            color: variables.$heading-color;
-            box-shadow: 0px 0px 25px -10px rgba(15, 14, 14, 0.65);
-            white-space: nowrap;
-          }
+  .navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.6rem 0 1.6rem 0;
+  
+    .logo{
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 150px;
+    }
+  
+    .button{
+      flex: 0;
+      display: flex;
+      align-items: center;
+  
+      .btn{
+        background-color: white;
+        padding: .500rem 2.5rem;
+        border-radius: 50px;
+        font-size: .820rem;
+        font-weight: 600;
+        color: variables.$heading-color;
+        box-shadow: 0px 0px 25px -10px rgba(15, 14, 14, 0.65);
+        white-space: nowrap;
+      }
 
-          .btn:hover{
-            color: variables.$text-color;
-          }
-        }
+      .btn:hover{
+        color: variables.$text-color;
+      }
+    }
+  }
+
+  .container{  
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "text image";
+    margin: 2rem 0 0 0;
+
+    .text {
+      justify-self: start;
+      align-self: center;
+      grid-area: text;
     }
 
-    .container{  
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr;
-        gap: 0px 0px;
-        grid-auto-flow: row;
-        grid-template-areas:
-          "text image";
-        margin: 2rem 0 0 0;
-
-        .text {
-        justify-self: start;
-        align-self: center;
-        grid-area: text;
-        }
-
-        h1{
-            font-size: 2.8rem;
-            margin-bottom: 2rem;
-        }
-
-        .first-text{
-            font-family: variables.$font-text;
-            color: variables.$heading-color;
-            margin-bottom: 2rem;
-        }
-
-        .btn-started{
-            @include btn-started;
-        }
-        
-        .image {
-        align-self: center;
-        grid-area: image;
-        }
-
-        .mockups{
-            width: 100%;
-        }
+    h1{
+      font-size: 2.8rem;
+      margin-bottom: 2rem;
     }
+
+    .first-text{
+      font-family: variables.$font-text;
+      color: variables.$heading-color;
+      margin-bottom: 2rem;
+    }
+
+    .btn-started{
+      @include btn-started;
+    }
+    
+    .image {
+      align-self: center;
+      grid-area: image;
+    }
+
+    .mockups{
+      width: 100%;
+    }
+  }
 }
 
 /// SECOND SECTION ///
@@ -116,27 +134,109 @@
   grid-auto-flow: row;
   grid-template-areas:
     "text-zone-1 image-1";
-  margin: 0 4rem;
-  background-color: white;
+  @include card;
 
   .text-zone-1{
     align-self: center;
     grid-area: text-zone-1;
+    padding-right: 4rem;
   }
 
-  h2, h3, h4, h5{
-    font-size: 2rem;
-    margin-bottom: 1.2rem;
+  h2{
+    @include heading;
+  }
+
+  .text-grow{
+    @include text-setup;
   }
   
   .image-1{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    justify-self: end;
     align-self: center;
     grid-area: image-1;
   }
 
   .grow-img{
-    width: 100%;
+    width: 80%;
   }
 }
+
+/// THIRD SECTION ///
+
+.third-container {  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "image-2 text-zone-2";
+  @include card;
+
+  .image-2 {
+    align-self: center;
+    grid-area: image-2;
+  }
+
+  .flowing-img{
+    width: 80%;
+  }
+
+  .text-zone-2 {
+    align-self: center;
+    grid-area: text-zone-2;
+  }
+
+  h3{
+    @include heading;
+  }
+
+  .text-flowing{
+    @include text-setup;
+  }
+}
+
+/// FOURTH SECTION ///
+
+.fourth-container{ 
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "text-zone-3 image-3";
+  @include card;
+
+  .user-img{
+    width: 80%;
+  }
+  
+  .text-zone-3 {
+    align-self: center;
+    grid-area: text-zone-3;
+  }
+
+  h4{
+    @include heading;
+  }
+
+  .text-user{
+    @include text-setup;
+  }
+
+  .image-3 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    justify-self: end;
+    align-self: center;
+    grid-area: image-3;
+  }
+
+}
+
 
 
