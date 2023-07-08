@@ -32,7 +32,7 @@
   border-radius: 16px;
   box-shadow: 0px 0px 25px -10px rgba(15, 14, 14, 0.25);
   margin: 0 4rem 2rem 4rem;
-  padding: 3rem 1rem 3rem 7rem;
+  padding: 3rem 1.5rem 3rem 7rem;
 }
 
 /// FIRST SECTION ///
@@ -209,10 +209,6 @@
   grid-template-areas:
     "text-zone-3 image-3";
   @include card;
-
-  .user-img{
-    width: 80%;
-  }
   
   .text-zone-3 {
     align-self: center;
@@ -236,7 +232,73 @@
     grid-area: image-3;
   }
 
+  .user-img{
+    width: 80%;
+  }
 }
 
+/// FIFTH SECTION ///
+
+.fifth-container{
+  text-align: center;
+  background-color: white;
+  box-shadow: 0px 0px 25px -10px rgba(15, 14, 14, 0.25);
+  margin: 6rem auto 2rem auto;
+  padding: 2rem 4rem;
+  border-radius: 16px;
+  width: 500px;
+
+  h5{
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem
+  }
+
+  .btn-started-footer{
+    @include btn-started;
+  }
+}
+
+/// FOOTER SECTION ///
+
+.footer-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "logo-footer logo-footer logo-footer logo-footer"
+    "map about career icon"
+    "phone what blog ."
+    "mail faq contact copyright";
+  background-color: #00252e;
+
+  .logo-footer {
+    justify-self: start;
+    grid-area: logo-footer;
+  }
+  
+  .map { grid-area: map; }
+  
+  .phone { grid-area: phone; }
+  
+  .mail { grid-area: mail; }
+  
+  .icon { grid-area: icon; }
+  
+  .copyright { grid-area: copyright; }
+  
+  .about { grid-area: about; }
+  
+  .what { grid-area: what; }
+  
+  .faq { grid-area: faq; }
+  
+  .career { grid-area: career; }
+  
+  .blog { grid-area: blog; }
+  
+  .contact { grid-area: contact; }
+}
 
 
