@@ -35,6 +35,13 @@
   padding: 3rem 1.5rem 3rem 7rem;
 }
 
+@mixin footer{
+  color: white;
+  font-size: .800rem;
+  font-family: variables.$font-text;
+  padding-left: .900rem;
+}
+
 /// FIRST SECTION ///
 
 .bg-container{
@@ -260,45 +267,78 @@
 
 /// FOOTER SECTION ///
 
-.footer-container{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "logo-footer logo-footer logo-footer logo-footer"
-    "map about career icon"
-    "phone what blog ."
-    "mail faq contact copyright";
+.footer-sec{
   background-color: #00252e;
+  padding: 9rem 3rem 4rem 3rem;
 
-  .logo-footer {
-    justify-self: start;
-    grid-area: logo-footer;
+  .footer-logo{
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .500rem;
+    // padding: 20px;
   }
   
-  .map { grid-area: map; }
+  .column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+  }
   
-  .phone { grid-area: phone; }
+  .row {
+    display: flex;
+    padding: 8px;
+  }
   
-  .mail { grid-area: mail; }
-  
-  .icon { grid-area: icon; }
-  
-  .copyright { grid-area: copyright; }
-  
-  .about { grid-area: about; }
-  
-  .what { grid-area: what; }
-  
-  .faq { grid-area: faq; }
-  
-  .career { grid-area: career; }
-  
-  .blog { grid-area: blog; }
-  
-  .contact { grid-area: contact; }
-}
+  .lorem{
+    @include footer;
+    padding-left: 1.2rem;
+  }
 
+  .num{
+    @include footer;
+  }
+
+  .mailing{
+    @include footer;
+    // padding-left: 0.600rem;
+  }
+
+  .link{
+    color: white;
+    font-size: .800rem;
+  }
+
+  .link:hover{
+    text-decoration: underline;
+  }
+
+  .icon-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 15px;
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .icon-footer:hover{
+    cursor: pointer;
+    color: #fe52c0 !important;
+    border: 2px solid #fe52c0;
+  }
+
+  .copyright{
+    display: flex;
+    justify-content: end;
+    @include footer;
+  }
+}
 
