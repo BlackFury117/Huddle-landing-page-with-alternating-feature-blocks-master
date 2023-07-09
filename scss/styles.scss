@@ -25,7 +25,7 @@
 @mixin mobile-heading{
   font-size: 1.5rem;
   text-align: center;
-  margin: 1.2rem 0;
+  margin: 1.4rem 0;
 }
 
 @mixin text-setup{
@@ -369,7 +369,26 @@
 }
 
 @include mobile-view{
-  
+  .fourth-container{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "image-3"
+      "text-zone-3";
+    @include mobile-card;
+
+    .user-img{
+      width: 100%;
+    }
+
+    h4{
+      @include mobile-heading;
+    }
+
+    .text-user{
+      text-align: center;
+    }
+  }
 }
 
 /// FIFTH SECTION ///
@@ -397,6 +416,12 @@
 
   .btn-started-footer{
     @include btn-started;
+  }
+}
+
+@include mobile-view{
+  .fifth-container{
+    
   }
 }
 
