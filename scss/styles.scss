@@ -155,6 +155,7 @@
     background-size: contain;
     padding-left: 1rem;
     padding-right: 1rem;
+    min-height: 0;
 
     .navbar{
       .logo{
@@ -187,6 +188,10 @@
 
       .first-text{
         text-align: center;
+      }
+
+      .mockups{
+        margin-bottom: 1rem;
       }
 
       .btn-started{
@@ -505,6 +510,34 @@
     justify-content: flex-end;
     @include footer;
     margin-right: 1.25rem;
+  }
+}
+
+@include mobile-view{
+  .footer-sec{
+    padding: 9rem 1rem 4rem 1rem;
+
+    .footer-section{
+      flex-direction: column;
+
+      .mailing-footer{
+        margin-bottom: 2rem;
+      }
+
+      .link{
+        font-size: 1rem;
+      }
+
+      .icon-footer-2{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
+    }
+
+    .copyright{
+      justify-content: center;
+    }
   }
 }
 
