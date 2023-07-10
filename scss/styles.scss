@@ -62,7 +62,7 @@
 /// FIRST SECTION ///
 
 .bg-container{
-  background-image: url(/images/bg-hero-desktop.svg);
+  background-image: url(https://raw.githubusercontent.com/BlackFury117/Huddle-landing-page-with-alternating-feature-blocks-master/24961947e9bd6023318c92de8df50fe1576ca0f9/images/bg-hero-desktop.svg);
   background-color: #edfbfe;
   background-repeat: no-repeat;
   background-size: contain;
@@ -150,7 +150,7 @@
 
 @include mobile-view{
   .bg-container{
-    background-image: url(/images/bg-hero-mobile.svg);
+    background-image: url(https://raw.githubusercontent.com/BlackFury117/Huddle-landing-page-with-alternating-feature-blocks-master/24961947e9bd6023318c92de8df50fe1576ca0f9/images/bg-hero-mobile.svg);
     background-repeat: no-repeat;
     background-size: contain;
     padding-left: 1rem;
